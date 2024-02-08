@@ -1,69 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Evaluation</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Model Evaluation</h1>
-
-        <h2>Accuracy: 0.7792207792207793</h2>
-
-        <h2>Cross-Validation Accuracy: 0.7785285885645742</h2>
-
-        <div class="classification-report">
-            <h2>Classification Report:</h2>
-            <table>
-                <tr>
-                    <th>Class</th>
-                    <th>Precision</th>
-                    <th>Recall</th>
-                    <th>F1-Score</th>
-                </tr>
-                <tr>
-                    <td>0 (Non-diabetes)</td>
-                    <td>0.81</td>
-                    <td>0.86</td>
-                    <td>0.83</td>
-                </tr>
-                <tr>
-                    <td>1 (Diabetes)</td>
-                    <td>0.71</td>
-                    <td>0.64</td>
-                    <td>0.67</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="confusion-matrix">
-            <h2>Confusion Matrix:</h2>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Predicted 0</th>
-                    <th>Predicted 1</th>
-                </tr>
-                <tr>
-                    <td>Actual 0</td>
-                    <td>85 (TN)</td>
-                    <td>14 (FP)</td>
-                </tr>
-                <tr>
-                    <td>Actual 1</td>
-                    <td>20 (FN)</td>
-                    <td>35 (TP)</td>
-                </tr>
-            </table>
-          </div>
-
-        <div class="image-container">
-            <img src="forest1.png" alt="Image Description">
-            <img src="forest2.png" alt="Image Description">
-            <img src="forest3.png" alt="Image Description">
-        </div>
+<div class="model-performance-analysis">
+    <h2>Model Performance Analysis:</h2>
+    <p>To determine whether the model's predictions can be considered "best" or not, we need to consider several factors:</p>
+    <ul>
+        <li><strong>Accuracy:</strong> Accuracy measures the overall correctness of the model's predictions. In this case, the accuracy would be calculated as the sum of true positives and true negatives divided by the total number of instances. However, accuracy alone may not be sufficient to evaluate the performance of a classifier, especially in the presence of class imbalance.</li>
+        <li><strong>Precision:</strong> Precision measures the proportion of true positive predictions out of all positive predictions made by the model. It indicates the model's ability to avoid false positives. Higher precision indicates fewer false positive predictions.</li>
+        <li><strong>Recall (Sensitivity):</strong> Recall measures the proportion of actual positive instances that were correctly predicted by the model. It indicates the model's ability to capture all positive instances and avoid false negatives. Higher recall indicates fewer false negative predictions.</li>
+        <li><strong>Specificity:</strong> Specificity measures the proportion of actual negative instances that were correctly predicted by the model. It indicates the model's ability to avoid false alarms for negative instances.</li>
+        <li><strong>F1 Score:</strong> The F1 score is the harmonic mean of precision and recall. It provides a single metric that balances both precision and recall.</li>
+    </ul>
+</div>
+<div class="improvement-steps">
+    <h2>Improvement Steps:</h2>
+    <p>To improve the model's performance, consider the following steps:</p>
+    <ul>
+        <li><strong>Feature Engineering:</strong> Analyze the features (columns) in your dataset and explore if there are any additional features you can create or existing features you can modify to better represent the underlying patterns in the data.</li>
+        <li><strong>Data Preprocessing:</strong> Review your data preprocessing steps, such as handling missing values and outliers. Ensure that your data is clean and properly formatted for the model.</li>
+        <li><strong>Hyperparameter Tuning:</strong> Experiment with different hyperparameters of the Random Forest model. Adjust the values of parameters like n_estimators, max_depth, min_samples_split, min_samples_leaf, and max_features to see if they impact the model's performance.</li>
+        <li><strong>Model Evaluation:</strong> Besides accuracy, consider other evaluation metrics such as precision, recall, and F1-score. Choose the metrics that are most important for your specific use case.</li>
+        <li><strong>Ensemble Methods:</strong> Explore other ensemble methods or variations of Random Forest, such as Gradient Boosting Machines (GBM) or XGBoost, to see if they provide better performance.</li>
+        <li><strong>Feature Importance:</strong> Analyze the feature importance provided by the Random Forest model to understand which features are contributing the most to the model's predictions and prioritize feature selection or engineering accordingly.</li>
+        <li><strong>Cross-Validation:</strong> Use robust cross-validation techniques to evaluate your model's performance and generalize well to unseen data.</li>
+        <li><strong>Collect More Data:</strong> If possible, collect more data or augment your existing dataset to provide the model with more information to learn from and improve its performance.</li>
+    </ul>
+</div>
+ <footer>
+            <p>&copy; 2024 @sudheer debbati. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
