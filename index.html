@@ -1,3 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Model Evaluation</h1>
+
+        <h2>Accuracy: 0.7792207792207793</h2>
+
+        <h2>Cross-Validation Accuracy: 0.7785285885645742</h2>
+
+        <div class="classification-report">
+            <h2>Classification Report:</h2>
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+                <tr>
+                    <td>0 (Non-diabetes)</td>
+                    <td>0.81</td>
+                    <td>0.86</td>
+                    <td>0.83</td>
+                </tr>
+                <tr>
+                    <td>1 (Diabetes)</td>
+                    <td>0.71</td>
+                    <td>0.64</td>
+                    <td>0.67</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="confusion-matrix">
+            <h2>Confusion Matrix:</h2>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Predicted 0</th>
+                    <th>Predicted 1</th>
+                </tr>
+                <tr>
+                    <td>Actual 0</td>
+                    <td>85 (TN)</td>
+                    <td>14 (FP)</td>
+                </tr>
+                <tr>
+                    <td>Actual 1</td>
+                    <td>20 (FN)</td>
+                    <td>35 (TP)</td>
+                </tr>
+            </table>
+          </div>
+
+        <div class="image-container">
+            <img src="forest1.png" alt="Image Description">
+            <img src="Forest2.png" alt="Image Description">
+            <img src="forest3.png" alt="Image Description">
+        </div>
+        <div class="confusion-description">
+            <h2>Confusion Matrix Description:</h2>
+            <p>The confusion matrix is a table that is often used to describe the performance of a classification model on a set of test data for which the true values are known. Each row of the matrix represents the actual class (or ground truth) of the instances, while each column represents the predicted class by the model.</p>
+        </div>
+        <div class="accuracy-description">
+    <h2>Accuracy Description:</h2>
+    <p>The accuracy is the proportion of correctly predicted outcomes out of the total number of predictions made. In this case, the model correctly predicted the outcome (diabetes or non-diabetes) for approximately 78% of the samples.</p>
+</div>
+
+<div class="cross-validation-accuracy-description">
+    <h2>Cross-Validation Accuracy Description:</h2>
+    <p>The cross-validation accuracy is the average accuracy of the model across multiple training and testing splits of the dataset. It provides an estimate of how well the model is expected to perform on unseen data. Here, the cross-validation accuracy is approximately 77.9%.</p>
+</div>
+<div class="classification-report-description">
+    <h2>Classification Report Description:</h2>
+    <p>The classification report provides a detailed summary of the model's performance for each class (diabetes and non-diabetes). It includes the following metrics:</p>
+    <ul>
+        <li><strong>Precision:</strong> The proportion of true positive predictions out of all positive predictions made. Higher precision indicates fewer false positives.</li>
+        <li><strong>Recall:</strong> The proportion of true positive predictions out of all actual positive instances. Higher recall indicates fewer false negatives.</li>
+        <li><strong>F1-score:</strong> The harmonic mean of precision and recall, providing a balance between the two metrics.</li>
+        <li><strong>Support:</strong> The number of actual occurrences of each class in the test set.</li>
+    </ul>
+</div>
+<div class="confusion-matrix-description">
+    <h2>Confusion Matrix Description:</h2>
+    <p>The confusion matrix is a table that visualizes the performance of a classification model. It compares the actual class labels with the predicted class labels. Each cell in the matrix represents a combination of predicted and actual classes:</p>
+    <ul>
+        <li><strong>True Positive (TP):</strong> Predicted diabetes correctly.</li>
+        <li><strong>True Negative (TN):</strong> Predicted non-diabetes correctly.</li>
+        <li><strong>False Positive (FP):</strong> Predicted diabetes incorrectly (actually non-diabetes).</li>
+        <li><strong>False Negative (FN):</strong> Predicted non-diabetes incorrectly (actually diabetes).</li>
+    </ul>
+</div>
+<div class="confusion-matrix-results">
+    <h2>Confusion Matrix Results:</h2>
+    <p>In the provided confusion matrix:</p>
+    <ul>
+        <li>There are 85 true positives (correctly predicted diabetes) and 35 true negatives (correctly predicted non-diabetes).</li>
+        <li>There are 14 false positives (incorrectly predicted diabetes) and 20 false negatives (incorrectly predicted non-diabetes).</li>
+    </ul>
+    <p>These results collectively provide insights into the model's overall performance, its ability to distinguish between classes, and potential areas for improvement.</p>
+</div>
+<div class="model-performance-summary">
+    <h2>Model Performance Summary:</h2>
+    <p>In summary, while the model shows relatively good performance in predicting non-diabetes (class 0), it has some room for improvement in predicting diabetes (class 1), as indicated by lower precision, recall, and F1-score for class 1 compared to class 0. Further analysis and potential model improvements may be needed to enhance the prediction accuracy for diabetes cases.</p>
+    <p>Based on the provided metrics and analysis, the model shows decent performance but may require further optimization for improved accuracy in predicting diabetes.</p>
+    <p>The model has predicted instances of non-diabetes (Outcome=0) relatively well with a precision of 81% and recall of 86%. However, it has shown weaker performance in predicting instances of diabetes (Outcome=1) with a precision of 71% and recall of 64%.</p>
+</div>
+<div class="confusion-matrix-analysis">
+    <h2>Confusion Matrix Analysis:</h2>
+    <p>From the confusion matrix, we can draw the following conclusions:</p>
+    <ul>
+        <li><strong>Accuracy:</strong> The overall accuracy of the model can be calculated as the sum of true positives and true negatives divided by the total number of instances, which is (85 + 35) / (85 + 14 + 20 + 35).</li>
+        <li><strong>Precision:</strong> Precision represents the proportion of true positive predictions out of all positive predictions made by the model. It is calculated as TP / (TP + FP), which in this case is 85 / (85 + 14).</li>
+        <li><strong>Recall (Sensitivity):</strong> Recall measures the proportion of actual positive instances that were correctly predicted by the model. It is calculated as TP / (TP + FN), which in this case is 85 / (85 + 20).</li>
+        <li><strong>Specificity:</strong> Specificity measures the proportion of actual negative instances that were correctly predicted by the model. It is calculated as TN / (TN + FP), which in this case is 35 / (35 + 14).</li>
+    </ul>
+    <p>These metrics provide insights into the model's performance in distinguishing between diabetes and non-diabetes instances.</p>
+</div>
 <div class="model-performance-analysis">
     <h2>Model Performance Analysis:</h2>
     <p>To determine whether the model's predictions can be considered "best" or not, we need to consider several factors:</p>
